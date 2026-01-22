@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПИК-Интегратор - Интеллектуальные системы автоматизации</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Базовые сбросы и настройки типографики */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка */
+        .header {
+            padding: 20px 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            margin-left: 10px;
+        }
+
+        .logo-subtitle {
+            font-size: 0.8rem;
+            color: #666;
+            line-height: 1.2;
+        }
+
+        .logo-title {
+            font-family: 'Roboto Slab', serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #0054a6;
+            line-height: 1;
+            letter-spacing: -0.5px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        .nav a:hover {
+            color: #0054a6;
+        }
+
+        /* Герой-секция */
+        .hero {
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .hero-text h1 {
+            font-family: 'Roboto Slab', serif;
+            font-size: 2.8rem;
+            line-height: 1.2;
+            color: #0054a6;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: #333;
+            display: block;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+            max-width: 90%;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6600;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #e55c00;
+            transform: translateY(-2px);
+        }
+
+        /* Изображение - исправленный вариант */
+        .hero-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            /* Фон и картинка для примера. Замените на свою */
+            background: #f5f7fa url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') no-repeat center center;
+            background-size: cover;
+            height: 400px;
+        }
+
+        /* Мобильное меню */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #0054a6;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                z-index: 100;
+            }
+            .nav.active {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        /* Футер */
+        .footer {
+            padding: 30px 0;
+            border-top: 1px solid #eaeaea;
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="/" class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="#0054A6"/>
+                    <path d="M12 12 L28 12 L28 28 L12 28 Z" stroke="white" stroke-width="2"/>
+                    <circle cx="20" cy="20" r="6" fill="#FF6600"/>
+                </svg>
+                <div class="logo-text">
+                    <div class="logo-subtitle">ПИК-Интегратор - интеллектуальные системы автоматизации</div>
+                    <div class="logo-title">ПИК-ИНТЕГРАТОР</div>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" id="menuBtn">☰</button>
+            <nav class="nav" id="mainNav">
+                <a href="#about">О компании</a>
+                <a href="#services">Услуги</a>
+                <a href="#expertise">Экспертиза</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="about">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>ПИК-Интегратор:<br><span>Интеллектуальная автоматизация</span></h1>
+                    <p class="hero-description">
+                        Автоматизация технологических процессов, систем диспетчеризации и учета энергоресурсов.
+                    </p>
+                    <a href="#contact-form" class="cta-button">Обсудить проект →</a>
+                </div>
+                <div class="hero-image">
+                    <!-- Изображение задано через background CSS -->
+                </div>
+            </div>
+        </section>
+        <!-- Здесь могут быть другие секции: Услуги, Экспертиза и т.д. -->
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            © ПИК-Интегратор. Все права защищены.
+        </div>
+    </footer>
+
+    <script>
+        // Мобильное меню
+        const menuBtn = document.getElementById('menuBtn');
+        const mainNav = document.getElementById('mainNav');
+        menuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
