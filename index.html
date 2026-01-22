@@ -10,9 +10,7 @@
             --primary: #0a192f;
             --secondary: #112240;
             --accent: #64ffda;
-            --accent-dark: #52d1b9;
             --light: #ccd6f6;
-            --dark: #020c1b;
             --gray: #8892b0;
             --shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
             --radius: 8px;
@@ -46,7 +44,6 @@
         header {
             background-color: rgba(10, 25, 47, 0.95);
             backdrop-filter: blur(10px);
-            color: white;
             padding: 1.5rem 0;
             position: sticky;
             top: 0;
@@ -55,64 +52,46 @@
             transition: var(--transition);
         }
         
-        .scrolled {
-            padding: 1rem 0;
-            box-shadow: var(--shadow);
-        }
-        
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-            color: var(--light);
-        }
-        
         .logo-container {
             display: flex;
             align-items: center;
             gap: 15px;
+            text-decoration: none;
         }
         
-        /* УЛУЧШЕННЫЙ СТРУКТУРИРОВАННЫЙ ЛОГОТИП */
         .logo-graphic {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
-        /* Внешняя рамка для структуры */
         .logo-frame {
             position: absolute;
             width: 100%;
             height: 100%;
             border: 2px solid rgba(100, 255, 218, 0.3);
-            border-radius: 12px;
-            box-shadow: inset 0 0 15px rgba(100, 255, 218, 0.1);
-            z-index: 1;
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px rgba(100, 255, 218, 0.1);
         }
         
-        /* Основание с градиентом */
         .logo-base {
             position: absolute;
             width: 90%;
             height: 90%;
             background: linear-gradient(135deg, rgba(16, 42, 80, 0.8) 0%, rgba(10, 25, 47, 0.9) 100%);
-            border-radius: 8px;
-            z-index: 2;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         
-        /* Орбита с лучшей структурой */
         .orbit {
             position: absolute;
             width: 85%;
@@ -120,142 +99,68 @@
             border: 1.5px solid var(--accent);
             border-radius: 50%;
             opacity: 0.4;
-            animation: orbitRotate 25s linear infinite;
-            z-index: 3;
+            animation: orbitRotate 30s linear infinite;
         }
         
-        /* Точки на орбите для структуры */
-        .orbit::before, .orbit::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 8px var(--accent);
-        }
-        
-        .orbit::before {
-            top: -3px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .orbit::after {
-            bottom: -3px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        /* Упорядоченные шестеренки */
         .gear {
             position: absolute;
             color: var(--accent);
-            z-index: 4;
             filter: drop-shadow(0 0 2px rgba(100, 255, 218, 0.5));
         }
         
         .gear-large {
-            font-size: 1.8rem;
-            width: 30px;
-            height: 30px;
-            animation: gearRotate 20s linear infinite;
+            font-size: 1.6rem;
+            width: 28px;
+            height: 28px;
+            animation: gearRotate 25s linear infinite;
         }
         
         .gear-small {
-            font-size: 1.2rem;
-            width: 20px;
-            height: 20px;
-            animation: gearRotateReverse 15s linear infinite;
+            font-size: 1.1rem;
+            width: 18px;
+            height: 18px;
+            animation: gearRotateReverse 20s linear infinite;
         }
         
-        /* Позиции шестеренок в углах для устойчивости */
         .gear-top-right { top: 8px; right: 8px; }
         .gear-bottom-left { bottom: 8px; left: 8px; }
         
-        /* Центральный контейнер для текста */
         .logo-center {
             position: absolute;
-            width: 42px;
-            height: 42px;
+            width: 38px;
+            height: 38px;
             background: rgba(10, 25, 47, 0.95);
-            border-radius: 6px;
+            border-radius: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 5;
             border: 1px solid rgba(100, 255, 218, 0.4);
-            box-shadow: 
-                0 0 10px rgba(100, 255, 218, 0.2),
-                inset 0 0 8px rgba(100, 255, 218, 0.1);
+            box-shadow: 0 0 8px rgba(100, 255, 218, 0.2);
         }
         
-        /* Текст с улучшенной читаемостью */
         .logo-text {
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 900;
             color: var(--accent);
-            letter-spacing: 1.2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            text-shadow: 
-                0 0 10px rgba(100, 255, 218, 0.6),
-                0 0 20px rgba(100, 255, 218, 0.3);
-            position: relative;
-        }
-        
-        /* Центральная точка с эффектом свечения */
-        .center-dot {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 50%;
-            z-index: 6;
-            box-shadow: 0 0 12px var(--accent);
-        }
-        
-        /* Анимации */
-        @keyframes orbitRotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        @keyframes gearRotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        @keyframes gearRotateReverse {
-            from { transform: rotate(360deg); }
-            to { transform: rotate(0deg); }
-        }
-        
-        /* Текстовая часть логотипа */
-        .logo-text-container {
-            display: flex;
-            flex-direction: column;
         }
         
         .logo-main-text {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
             line-height: 1;
             background: linear-gradient(to right, var(--light), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
             letter-spacing: -0.5px;
-            text-transform: uppercase;
         }
         
         .logo-subtext {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--gray);
-            margin-top: 5px;
+            margin-top: 3px;
             font-weight: 400;
-            max-width: 200px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
         }
         
         nav ul {
@@ -310,20 +215,28 @@
         
         .mobile-menu-btn:hover {
             background-color: rgba(100, 255, 218, 0.1);
-            transform: translateY(-2px);
+        }
+        
+        @keyframes orbitRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes gearRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes gearRotateReverse {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(
-                rgba(10, 25, 47, 0.95), 
-                rgba(10, 25, 47, 0.98)
-            );
-            color: white;
+            background: linear-gradient(rgba(10, 25, 47, 0.95), rgba(10, 25, 47, 0.98));
             padding: 6rem 0 4rem;
-            text-align: left;
             position: relative;
-            overflow: hidden;
         }
         
         .hero::before {
@@ -334,7 +247,6 @@
             width: 40%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.05));
-            z-index: 1;
         }
         
         .hero-content {
@@ -349,7 +261,6 @@
             background: linear-gradient(to right, var(--light), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
             max-width: 800px;
         }
         
@@ -382,11 +293,8 @@
             max-width: 700px;
             margin-bottom: 2rem;
             color: var(--gray);
-            font-weight: 300;
             line-height: 1.8;
         }
-        
-        /* БЛОК С ЦИФРАМИ УДАЛЕН - НЕТ .hero-stats, .stat-item и т.д. */
         
         .cta-button {
             display: inline-flex;
@@ -401,14 +309,11 @@
             font-size: 1rem;
             transition: var(--transition);
             border: 1px solid var(--accent);
-            position: relative;
-            overflow: hidden;
         }
         
         .cta-button:hover {
             background-color: rgba(100, 255, 218, 0.1);
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px -10px rgba(100, 255, 218, 0.3);
         }
         
         /* Sections */
@@ -418,7 +323,6 @@
         
         .section-title {
             margin-bottom: 3rem;
-            position: relative;
         }
         
         .section-title h2 {
@@ -446,7 +350,7 @@
             line-height: 1.8;
         }
         
-        /* About - ПЕРЕРАБОТАННАЯ СЕКЦИЯ С ФОТОГРАФИЕЙ */
+        /* About Section */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -469,12 +373,10 @@
             font-weight: 500;
         }
         
-        /* НОВЫЙ ДИЗАЙН ФОТОГРАФИИ - БЕЗ ОБРЕЗКИ */
         .about-image-container {
             position: relative;
             border-radius: var(--radius);
             overflow: visible;
-            margin-top: 2rem;
         }
         
         .about-image-frame {
@@ -483,108 +385,25 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             border: var(--border);
-            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
             transition: var(--transition);
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .about-image-frame::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                45deg,
-                transparent 30%,
-                rgba(100, 255, 218, 0.05) 50%,
-                transparent 70%
-            );
-            z-index: 2;
-            pointer-events: none;
-        }
-        
-        .about-image-frame::after {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            right: -20px;
-            bottom: -20px;
-            background: linear-gradient(135deg, var(--accent) 0%, transparent 30%);
-            border-radius: var(--radius);
-            opacity: 0.1;
-            z-index: 1;
-            pointer-events: none;
         }
         
         .about-image-frame:hover {
-            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-            box-shadow: 
-                0 25px 50px -12px rgba(2, 12, 27, 0.8),
-                0 0 30px rgba(100, 255, 218, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(2, 12, 27, 0.8);
         }
         
-        /* Фотография - сохраняем пропорции, без обрезки */
         .about-image {
             width: 100%;
             height: auto;
             display: block;
             transition: var(--transition);
-            filter: grayscale(10%) contrast(110%) brightness(0.9);
-            position: relative;
-            z-index: 1;
+            filter: grayscale(10%) contrast(110%);
         }
         
         .about-image-frame:hover .about-image {
-            filter: grayscale(0%) contrast(115%) brightness(1);
+            filter: grayscale(0%) contrast(115%);
             transform: scale(1.02);
-        }
-        
-        /* Декоративные элементы для фотографии */
-        .image-decoration {
-            position: absolute;
-            z-index: 0;
-        }
-        
-        .decoration-1 {
-            top: -15px;
-            left: -15px;
-            width: 50px;
-            height: 50px;
-            border: 2px solid var(--accent);
-            border-radius: 8px;
-            opacity: 0.3;
-            animation: pulse 4s infinite ease-in-out;
-        }
-        
-        .decoration-2 {
-            bottom: -10px;
-            right: -10px;
-            width: 30px;
-            height: 30px;
-            background: var(--accent);
-            border-radius: 50%;
-            opacity: 0.2;
-            animation: pulse 3s infinite ease-in-out;
-            animation-delay: 1s;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.2; }
-            50% { transform: scale(1.1); opacity: 0.3; }
-        }
-        
-        /* Подпись к фотографии */
-        .image-caption {
-            margin-top: 1rem;
-            text-align: center;
-            color: var(--gray);
-            font-size: 0.9rem;
-            font-style: italic;
-            padding: 0 1rem;
         }
         
         /* Services */
@@ -593,25 +412,10 @@
             position: relative;
         }
         
-        .services::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(100, 255, 218, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(100, 255, 218, 0.03) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        
         .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 2rem;
-            position: relative;
-            z-index: 2;
         }
         
         .service-card {
@@ -620,14 +424,12 @@
             padding: 2rem;
             transition: var(--transition);
             border: var(--border);
-            backdrop-filter: blur(10px);
         }
         
         .service-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow);
             border-color: rgba(100, 255, 218, 0.3);
-            background-color: rgba(17, 34, 64, 0.9);
         }
         
         .service-icon {
@@ -685,33 +487,19 @@
         
         /* Contact */
         .contact {
-            background-color: var(--dark);
+            background-color: var(--primary);
             border-top: var(--border);
-            position: relative;
-        }
-        
-        .contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 70% 30%, rgba(100, 255, 218, 0.03) 0%, transparent 50%);
-            pointer-events: none;
         }
         
         .contact-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
             gap: 3rem;
-            position: relative;
-            z-index: 2;
         }
         
         .contact-info {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
         
@@ -729,13 +517,11 @@
         .contact-item:hover {
             background-color: rgba(17, 34, 64, 0.8);
             transform: translateX(5px);
-            border-color: rgba(100, 255, 218, 0.3);
         }
         
         .contact-icon {
             font-size: 1.5rem;
             color: var(--accent);
-            margin-top: 5px;
             min-width: 40px;
         }
         
@@ -752,7 +538,7 @@
         
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background-color: var(--primary);
             color: var(--gray);
             padding: 3rem 0 1.5rem;
             border-top: var(--border);
@@ -760,45 +546,44 @@
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
             margin-bottom: 2rem;
         }
         
-        .footer-column h4 {
-            color: var(--light);
+        .footer-logo {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
             margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: 600;
         }
         
-        .footer-column ul {
-            list-style: none;
+        .footer-logo .logo-graphic {
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
         }
         
-        .footer-column ul li {
-            margin-bottom: 0.8rem;
+        .footer-logo .logo-center {
+            width: 32px;
+            height: 32px;
         }
         
-        .footer-column a {
-            color: var(--gray);
-            text-decoration: none;
-            transition: var(--transition);
+        .footer-logo .logo-text {
+            font-size: 0.8rem;
         }
         
-        .footer-column a:hover {
-            color: var(--accent);
+        .footer-logo-text h3 {
+            font-size: 1.3rem;
+            color: var(--light);
+            margin-bottom: 5px;
         }
         
-        .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(100, 255, 218, 0.1);
+        .footer-logo-text p {
             font-size: 0.9rem;
-            color: var(--gray);
+            line-height: 1.6;
         }
         
-        /* Улучшенные социальные иконки */
         .social-links {
             display: flex;
             gap: 1rem;
@@ -806,66 +591,33 @@
         }
         
         .social-link {
-            width: 46px;
-            height: 46px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            transition: var(--transition);
             background: var(--secondary);
             border: 1px solid rgba(100, 255, 218, 0.2);
         }
         
         .social-link i {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--accent);
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .social-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-            transform: scale(0);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            z-index: 1;
-        }
-        
-        .social-link:hover::before {
-            transform: scale(1);
         }
         
         .social-link:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
-            border-color: transparent;
+            background-color: rgba(100, 255, 218, 0.1);
+            transform: translateY(-3px);
         }
         
-        .social-link:hover i {
-            color: var(--primary);
-        }
-        
-        .social-link.telegram:hover {
-            box-shadow: 0 10px 20px rgba(0, 136, 204, 0.3);
-        }
-        
-        .social-link.whatsapp:hover {
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-        }
-        
-        .social-link.email:hover {
-            box-shadow: 0 10px 20px rgba(234, 67, 53, 0.3);
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(100, 255, 218, 0.1);
+            font-size: 0.9rem;
         }
         
         /* Responsive */
@@ -883,24 +635,9 @@
                 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             }
             
-            .about-image-frame {
-                transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-                max-width: 80%;
-                margin: 0 auto;
-            }
-            
-            .logo-graphic {
-                width: 60px;
-                height: 60px;
-            }
-            
-            .logo-center {
-                width: 36px;
-                height: 36px;
-            }
-            
-            .logo-text {
-                font-size: 0.9rem;
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
         
@@ -932,7 +669,6 @@
             
             .hero {
                 padding: 5rem 0 3rem;
-                text-align: center;
             }
             
             .hero h1 {
@@ -947,40 +683,17 @@
                 padding: 3rem 0;
             }
             
-            .contact-content {
+            .contact-info {
                 grid-template-columns: 1fr;
             }
             
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .about-image-frame {
-                max-width: 100%;
-            }
-            
-            .logo-graphic {
-                width: 55px;
-                height: 55px;
-            }
-            
-            .logo-center {
-                width: 32px;
-                height: 32px;
-            }
-            
-            .logo-text {
-                font-size: 0.85rem;
+            .section-title h2 {
+                font-size: 1.8rem;
             }
         }
         
         @media (max-width: 576px) {
             .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title h2 {
                 font-size: 1.8rem;
             }
             
@@ -998,12 +711,8 @@
             }
             
             .logo-center {
-                width: 28px;
-                height: 28px;
-            }
-            
-            .logo-text {
-                font-size: 0.75rem;
+                width: 32px;
+                height: 32px;
             }
         }
     </style>
@@ -1012,36 +721,20 @@
     <!-- Header -->
     <header id="header">
         <div class="container header-content">
-            <a href="#" class="logo">
-                <div class="logo-container">
-                    <!-- УСОВЕРШЕНСТВОВАННЫЙ СТРУКТУРИРОВАННЫЙ ЛОГОТИП -->
-                    <div class="logo-graphic">
-                        <!-- Внешняя рамка для структуры -->
-                        <div class="logo-frame"></div>
-                        
-                        <!-- Основание с градиентом -->
-                        <div class="logo-base"></div>
-                        
-                        <!-- Орбита с точками -->
-                        <div class="orbit"></div>
-                        
-                        <!-- Упорядоченные шестеренки в углах -->
-                        <i class="fas fa-cog gear gear-large gear-top-right"></i>
-                        <i class="fas fa-cog gear gear-small gear-bottom-left"></i>
-                        
-                        <!-- Центральный контейнер для текста -->
-                        <div class="logo-center">
-                            <div class="logo-text">ПИК</div>
-                        </div>
-                        
-                        <!-- Центральная точка -->
-                        <div class="center-dot"></div>
+            <a href="#" class="logo-container">
+                <div class="logo-graphic">
+                    <div class="logo-frame"></div>
+                    <div class="logo-base"></div>
+                    <div class="orbit"></div>
+                    <i class="fas fa-cog gear gear-large gear-top-right"></i>
+                    <i class="fas fa-cog gear gear-small gear-bottom-left"></i>
+                    <div class="logo-center">
+                        <div class="logo-text">ПИК</div>
                     </div>
-                    
-                    <div class="logo-text-container">
-                        <div class="logo-main-text">ПИК-Интегратор</div>
-                        <div class="logo-subtext">Интеллектуальная автоматизация</div>
-                    </div>
+                </div>
+                <div>
+                    <div class="logo-main-text">ПИК-Интегратор</div>
+                    <div class="logo-subtext">Интеллектуальная автоматизация</div>
                 </div>
             </a>
             
@@ -1069,8 +762,6 @@
                 <span>Обсудить проект</span>
                 <i class="fas fa-arrow-right"></i>
             </a>
-            
-            <!-- БЛОК С ЦИФРАМИ УДАЛЕН - ЭТОГО ДАЛЬШЕ НЕТ -->
         </div>
     </section>
 
@@ -1090,16 +781,9 @@
                 </div>
                 
                 <div class="about-image-container">
-                    <!-- РАМКА С 3D ЭФФЕКТОМ -->
                     <div class="about-image-frame">
-                        <!-- ФОТОГРАФИЯ БЕЗ ОБРЕЗКИ -->
                         <img src="automation.jpg" alt="Автоматизация производства" class="about-image">
-                        
-                        <!-- Декоративные элементы -->
-                        <div class="image-decoration decoration-1"></div>
-                        <div class="image-decoration decoration-2"></div>
                     </div>
-                    <div class="image-caption">Интеллектуальные системы автоматизации производства</div>
                 </div>
             </div>
         </div>
@@ -1231,61 +915,42 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <div class="logo-container" style="margin-bottom: 1rem;">
-                        <div class="logo-graphic" style="width: 50px; height: 50px;">
-                            <div class="logo-frame" style="border: 1px solid rgba(100, 255, 218, 0.2);"></div>
-                            <div class="logo-base" style="width: 85%; height: 85%;"></div>
-                            <div class="logo-center" style="width: 30px; height: 30px;">
-                                <div class="logo-text" style="font-size: 0.8rem;">ПИК</div>
+                <div>
+                    <div class="footer-logo">
+                        <div class="logo-graphic">
+                            <div class="logo-frame"></div>
+                            <div class="logo-base"></div>
+                            <div class="logo-center">
+                                <div class="logo-text">ПИК</div>
                             </div>
                         </div>
-                        <div class="logo-text-container">
-                            <div class="logo-main-text" style="font-size: 1.3rem;">ПИК-Интегратор</div>
+                        <div class="footer-logo-text">
+                            <h3>ПИК-Интегратор</h3>
+                            <p>Интеллектуальные решения для автоматизации производства и учета ресурсов. Проектирование, программирование, пуско-наладка.</p>
                         </div>
                     </div>
-                    <p style="margin-top: 10px; line-height: 1.7;">Интеллектуальные решения для автоматизации производства и учета ресурсов. Проектирование, программирование, пуско-наладка.</p>
                     <div class="social-links">
-                        <a href="https://t.me/your-telegram" class="social-link telegram" title="Telegram">
+                        <a href="https://t.me/your-telegram" class="social-link" title="Telegram">
                             <i class="fab fa-telegram-plane"></i>
                         </a>
-                        <a href="https://wa.me/79874222587" class="social-link whatsapp" title="WhatsApp">
+                        <a href="https://wa.me/79874222587" class="social-link" title="WhatsApp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="mailto:andrey.kama@mail.ru" class="social-link email" title="Email">
+                        <a href="mailto:andrey.kama@mail.ru" class="social-link" title="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                 </div>
-                
-                <div class="footer-column">
-                    <h4>Услуги</h4>
-                    <ul>
-                        <li><a href="#services">Проектирование систем</a></li>
-                        <li><a href="#services">Промышленное программирование</a></li>
-                        <li><a href="#services">Пуско-наладка</a></li>
-                        <li><a href="#services">Системы учета</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>Контакты</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt" style="color: var(--accent); margin-right: 10px;"></i> Набережные Челны, ул. Ахметшина, 123А</li>
-                        <li><i class="fas fa-phone" style="color: var(--accent); margin-right: 10px;"></i> +7 (987) 422-25-87</li>
-                        <li><i class="fas fa-envelope" style="color: var(--accent); margin-right: 10px;"></i> andrey.kama@mail.ru</li>
-                    </ul>
-                </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 ООО "ПИК-Интегратор". Все права защищены.</p>
+                <p>&copy; 2026 ООО "ПИК-Интегратор". Все права защищены.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
+        // Mobile menu
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
         
@@ -1296,7 +961,7 @@
                 : '<i class="fas fa-bars"></i>';
         });
         
-        // Close menu when clicking on a link
+        // Close menu on link click
         document.querySelectorAll('#navMenu a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -1304,17 +969,7 @@
             });
         });
         
-        // Header scroll effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 if(this.getAttribute('href') === '#') return;
@@ -1332,76 +987,28 @@
             });
         });
         
-        // Приостановка анимации при неактивной вкладке для оптимизации
+        // Optimize animations when tab is inactive
         document.addEventListener('visibilitychange', function() {
             const gears = document.querySelectorAll('.gear');
             const orbit = document.querySelector('.orbit');
             if (document.hidden) {
-                gears.forEach(gear => {
-                    gear.style.animationPlayState = 'paused';
-                });
+                gears.forEach(gear => gear.style.animationPlayState = 'paused');
                 if (orbit) orbit.style.animationPlayState = 'paused';
             } else {
-                gears.forEach(gear => {
-                    gear.style.animationPlayState = 'running';
-                });
+                gears.forEach(gear => gear.style.animationPlayState = 'running');
                 if (orbit) orbit.style.animationPlayState = 'running';
             }
         });
         
-        // Предзагрузка и оптимизация изображения
+        // Image optimization
         window.addEventListener('load', function() {
             const img = document.querySelector('.about-image');
             if (img) {
-                // Проверяем, загружено ли изображение
-                if (img.complete && img.naturalWidth !== 0) {
-                    console.log('Изображение загружено успешно');
-                    applyImageOptimizations(img);
-                } else {
-                    img.onload = function() {
-                        console.log('Изображение загружено после ожидания');
-                        applyImageOptimizations(img);
-                    };
+                if (!img.complete || img.naturalWidth === 0) {
                     img.onerror = function() {
-                        console.warn('Ошибка загрузки изображения, используем fallback');
-                        img.src = 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80';
+                        this.src = 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
                     };
                 }
-            }
-        });
-        
-        function applyImageOptimizations(img) {
-            // Адаптивное качество изображения
-            const isRetina = window.devicePixelRatio > 1;
-            img.style.imageRendering = isRetina ? 'auto' : 'crisp-edges';
-            
-            // Ленивая загрузка для мобильных устройств
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            if (img.dataset.src) {
-                                img.src = img.dataset.src;
-                            }
-                            observer.unobserve(img);
-                        }
-                    });
-                });
-                
-                if (img.dataset.src) {
-                    observer.observe(img);
-                }
-            }
-        }
-        
-        // Параллакс эффект для героя
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                const rate = scrolled * -0.5;
-                hero.style.backgroundPosition = `0px ${rate}px`;
             }
         });
     </script>
